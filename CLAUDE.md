@@ -7,6 +7,7 @@
 - Start production server: `npm run start`
 - Run linter: `npm run lint`
 - Run TypeScript type checking: `npm run typecheck`
+- Create a new blog post: `npm run new-post`
 
 ## Codebase Structure
 
@@ -21,13 +22,35 @@ This is a Next.js project using the App Router. Important directories:
 
 ## Adding New Blog Posts
 
-To add a new blog post:
+### Automated Method (Recommended)
 
-1. Create a new directory in `/src/app/blog/[post-slug]/`
-2. Create a `page.tsx` file in that directory
-3. Update the blog list in `/src/app/blog/page.tsx`
-4. Add the post to the featured or recent posts in the homepage if needed
-5. Update the RSS feed in `/src/app/rss/route.ts`
+Run the helper script that will automate the entire process:
+
+```bash
+npm run new-post
+```
+
+This script will:
+1. Prompt you for post details (title, category, excerpt)
+2. Create a new post directory with the correct slug
+3. Generate a page.tsx file based on the template
+4. Update the central blog posts data
+5. Update the RSS feed automatically
+6. Handle marking posts as featured or recent
+
+### Manual Method
+
+If you prefer to add posts manually:
+
+1. Add the post data to `/src/data/blog-posts.ts`
+2. Create a new directory in `/src/app/blog/[post-slug]/`
+3. Copy the template from `/src/app/blog/post-template/page.tsx` to your new directory
+4. Update the page.tsx file with your content
+
+The centralized data approach ensures the post will automatically appear on:
+- The blog listing page
+- The homepage (if marked as featured or recent)
+- The RSS feed
 
 ## Code Style Preferences
 

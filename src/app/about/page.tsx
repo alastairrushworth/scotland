@@ -65,13 +65,14 @@ export default function AboutPage() {
           To stay updated with our latest articles and Scotland news, consider subscribing to our newsletter. We promise to respect your privacy and not to flood your inbox!
         </p>
         
-        <div className="newsletter-bg p-6 rounded-xl mt-8">
-          <h3 className="text-xl font-bold mb-4">Subscribe to Our Substack</h3>
+        <div className="newsletter-bg p-6 rounded-xl mt-8 max-w-xl mx-auto">
+          <h3 className="text-xl font-bold mb-2 text-center">Subscribe to Our Newsletter</h3>
+          <p className="mb-4 text-sm text-center">Get the latest Scotland travel tips and articles in your inbox</p>
           <iframe
             src={siteConfig.substackUrl}
             width="100%"
-            height="320"
-            className="rounded-xl border-0"
+            height="150"
+            className="rounded-lg border-0"
             frameBorder="0"
             scrolling="no"
             title="Subscribe to our Substack newsletter"
