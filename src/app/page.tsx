@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { siteConfig } from "../config/site";
 
 // Featured pinned content for homepage
 const featuredContent = [
@@ -135,7 +136,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold mb-4">Subscribe to Our Substack</h2>
             <p className="mb-6">Stay updated with the latest articles, travel tips, and Scotland news directly in your inbox.</p>
             <iframe
-              src="https://scotland-site.substack.com/embed"
+              src={siteConfig.substackUrl}
               width="100%"
               height="320"
               className="rounded-xl border-0"

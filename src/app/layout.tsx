@@ -5,6 +5,7 @@ import "./globals.css";
 import Link from "next/link";
 import { ThemeProvider } from "../components/ThemeProvider";
 import ThemeToggle from "../components/ThemeToggle";
+import { siteConfig } from "../config/site";
 
 
 const inter = Inter({
@@ -19,8 +20,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Scotland - Land of History and Beauty",
-  description: "Discover Scotland's rich history, breathtaking landscapes, and vibrant culture",
+  title: siteConfig.title,
+  description: siteConfig.description,
 };
 
 export default function RootLayout({
@@ -32,13 +33,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* Google Analytics Script */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.googleAnalyticsId}`} strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
+            gtag('config', '${siteConfig.googleAnalyticsId}');
           `}
         </Script>
         <Script id="theme-script" strategy="beforeInteractive">
@@ -62,9 +63,11 @@ export default function RootLayout({
           <nav className="container mx-auto flex justify-between items-center">
             <Link href="/" className="text-xl font-bold">Scotland</Link>
             <div className="flex items-center space-x-4">
-              <Link href="/" className="hover:text-blue-300">Home</Link>
-              <Link href="/blog" className="hover:text-blue-300">Blog</Link>
-              <Link href="/about" className="hover:text-blue-300">About</Link>
+              {siteConfig.mainNav.map((item) => (
+                <Link key={item.href} href={item.href} className="hover:text-blue-300">
+                  {item.title}
+                </Link>
+              ))}
               <ThemeToggle />
             </div>
           </nav>

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { siteConfig } from "../../config/site";
 
 export const metadata: Metadata = {
   title: "About | Scotland - Land of History and Beauty",
@@ -54,7 +55,7 @@ export default function AboutPage() {
         </p>
         
         <ul>
-          <li>Email: info@scotlandwebsite.com</li>
+          <li>Email: {siteConfig.email}</li>
           <li>Our social media channels</li>
           <li>The comment sections on our blog posts</li>
         </ul>
@@ -67,7 +68,7 @@ export default function AboutPage() {
         <div className="bg-blue-50 p-6 rounded-xl mt-8">
           <h3 className="text-xl font-bold mb-4">Subscribe to Our Substack</h3>
           <iframe
-            src="https://scotland-site.substack.com/embed"
+            src={siteConfig.substackUrl}
             width="100%"
             height="320"
             className="rounded-xl border-0"
