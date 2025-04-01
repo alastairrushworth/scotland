@@ -121,7 +121,7 @@ export default function BlogPage() {
     <div>
       <div className="mb-10">
         <h1 className="text-4xl font-bold mb-4">Scotland Blog</h1>
-        <p className="text-xl text-gray-600">
+        <p className="text-xl">
           Discover stories, travel tips, and insights about Scotland's rich history, stunning landscapes, and vibrant culture.
         </p>
       </div>
@@ -134,7 +134,7 @@ export default function BlogPage() {
             <Link 
               key={category}
               href={`#${category.toLowerCase()}`}
-              className="px-4 py-2 bg-blue-100 text-blue-800 rounded-xl hover:bg-blue-200 transition-colors"
+              className="px-4 py-2 category-tag rounded-xl transition-colors"
             >
               {category}
             </Link>
@@ -145,20 +145,20 @@ export default function BlogPage() {
       {/* Blog posts by category */}
       {Object.entries(categories).map(([category, posts]) => (
         <div key={category} id={category.toLowerCase()} className="mb-12">
-          <h2 className="text-2xl font-bold mb-6 border-b pb-2">{category}</h2>
+          <h2 className="text-2xl font-bold mb-6 border-b pb-2 custom-border">{category}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {posts.map((post) => (
-              <article key={post.id} className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
-                <span className="text-sm text-gray-500">{post.date}</span>
+              <article key={post.id} className="card rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                <span className="text-sm date">{post.date}</span>
                 <h3 className="text-xl font-bold my-2">
                   <Link href={post.slug} className="hover:text-blue-600 transition-colors">
                     {post.title}
                   </Link>
                 </h3>
-                <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                <p className="mb-4">{post.excerpt}</p>
                 <Link 
                   href={post.slug} 
-                  className="text-blue-600 font-medium hover:underline"
+                  className="content-link font-medium hover:underline"
                 >
                   Continue reading →
                 </Link>
@@ -169,7 +169,7 @@ export default function BlogPage() {
       ))}
 
       {/* Substack signup */}
-      <div className="bg-gray-100 rounded-xl p-8 mt-12">
+      <div className="newsletter-bg rounded-xl p-8 mt-12">
         <h2 className="text-2xl font-bold mb-4">Subscribe to Our Substack</h2>
         <p className="mb-6">Get the latest articles and Scotland travel tips delivered to your inbox.</p>
         <iframe

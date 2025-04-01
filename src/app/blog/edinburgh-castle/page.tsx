@@ -17,21 +17,21 @@ export default function EdinburghCastlePage() {
       {/* Blog header */}
       <div className="mb-8">
         <h1 className="text-4xl font-bold mb-4">Edinburgh Castle: A Historic Fortress</h1>
-        <div className="flex items-center text-gray-600 mb-6">
+        <div className="flex items-center mb-6 text-muted-text">
           <span>April 1, 2024</span>
           <span className="mx-2">•</span>
           <span>By Admin</span>
           <span className="mx-2">•</span>
           <Link 
             href="/blog#history" 
-            className="text-blue-600 hover:underline"
+            className="content-link hover:underline"
           >
             History
           </Link>
         </div>
-        <div className="relative h-[400px] bg-gray-200 mb-8">
+        <div className="relative h-[400px] bg-gray-200 dark:bg-gray-700 mb-8">
           {/* Replace with actual image */}
-          <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+          <div className="absolute inset-0 flex items-center justify-center text-gray-400 dark:text-gray-300">
             {/* Placeholder for Edinburgh Castle image */}
             [Edinburgh Castle Image]
           </div>
@@ -39,7 +39,7 @@ export default function EdinburghCastlePage() {
       </div>
 
       {/* Blog content */}
-      <div className="prose prose-lg max-w-none">
+      <div className="prose prose-lg max-w-none prose-headings:text-prose-headings prose-p:text-prose-text dark:prose-a:text-link">
         <p>
           Perched dramatically on a rocky outcrop in the heart of Scotland's capital, Edinburgh Castle stands as one of the nation's most iconic and historically significant landmarks. This ancient fortress has witnessed centuries of Scottish history unfold, from royal ceremonies and political intrigues to military conflicts and cultural celebrations.
         </p>
@@ -104,17 +104,17 @@ export default function EdinburghCastlePage() {
       <div className="mt-12 pt-6 border-t">
         <div className="flex flex-wrap gap-2 mb-6">
           <span className="font-bold">Tags:</span>
-          <Link href="/blog#history" className="px-3 py-1 bg-gray-100 rounded-xl hover:bg-gray-200">History</Link>
-          <Link href="/blog#edinburgh" className="px-3 py-1 bg-gray-100 rounded-xl hover:bg-gray-200">Edinburgh</Link>
-          <Link href="/blog#castles" className="px-3 py-1 bg-gray-100 rounded-xl hover:bg-gray-200">Castles</Link>
+          <Link href="/blog#history" className="px-3 py-1 category-tag rounded-xl">History</Link>
+          <Link href="/blog#edinburgh" className="px-3 py-1 category-tag rounded-xl">Edinburgh</Link>
+          <Link href="/blog#castles" className="px-3 py-1 category-tag rounded-xl">Castles</Link>
         </div>
         
         <div className="flex items-center">
           <span className="font-bold mr-4">Share:</span>
           <div className="flex gap-4">
-            <a href="#" className="text-blue-600 hover:text-blue-800">Twitter</a>
-            <a href="#" className="text-blue-600 hover:text-blue-800">Facebook</a>
-            <a href="#" className="text-blue-600 hover:text-blue-800">LinkedIn</a>
+            <a href="#" className="content-link hover:underline">Twitter</a>
+            <a href="#" className="content-link hover:underline">Facebook</a>
+            <a href="#" className="content-link hover:underline">LinkedIn</a>
           </div>
         </div>
       </div>
@@ -123,23 +123,23 @@ export default function EdinburghCastlePage() {
       <div className="mt-12">
         <h3 className="text-2xl font-bold mb-6">Related Posts</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-xl shadow p-4">
-            <Link href="/blog/scottish-highlands" className="text-lg font-semibold hover:text-blue-600">
+          <div className="card rounded-xl shadow p-4">
+            <Link href="/blog/scottish-highlands" className="text-lg font-semibold hover:text-link-hover">
               The Scottish Highlands
             </Link>
-            <p className="text-gray-600 mt-2">Discover the rugged beauty and ancient legends of the Scottish Highlands...</p>
+            <p className="mt-2">Discover the rugged beauty and ancient legends of the Scottish Highlands...</p>
           </div>
-          <div className="bg-white rounded-xl shadow p-4">
-            <Link href="/blog/traditional-scottish-foods" className="text-lg font-semibold hover:text-blue-600">
+          <div className="card rounded-xl shadow p-4">
+            <Link href="/blog/traditional-scottish-foods" className="text-lg font-semibold hover:text-link-hover">
               Traditional Scottish Foods You Must Try
             </Link>
-            <p className="text-gray-600 mt-2">From haggis to cranachan, discover the most iconic traditional Scottish dishes...</p>
+            <p className="mt-2">From haggis to cranachan, discover the most iconic traditional Scottish dishes...</p>
           </div>
-          <div className="bg-white rounded-xl shadow p-4">
-            <Link href="/blog/whisky-regions" className="text-lg font-semibold hover:text-blue-600">
+          <div className="card rounded-xl shadow p-4">
+            <Link href="/blog/whisky-regions" className="text-lg font-semibold hover:text-link-hover">
               A Guide to Scottish Whisky Regions
             </Link>
-            <p className="text-gray-600 mt-2">Scotland is divided into five whisky-producing regions, each with its own distinct characteristics...</p>
+            <p className="mt-2">Scotland is divided into five whisky-producing regions, each with its own distinct characteristics...</p>
           </div>
         </div>
       </div>
@@ -154,7 +154,7 @@ export default function EdinburghCastlePage() {
               <input 
                 type="text" 
                 id="name" 
-                className="w-full px-4 py-2 border rounded-xl"
+                className="w-full px-4 py-2 border rounded-xl dark:bg-gray-700 dark:border-gray-600"
                 required
               />
             </div>
@@ -163,7 +163,7 @@ export default function EdinburghCastlePage() {
               <input 
                 type="email" 
                 id="email" 
-                className="w-full px-4 py-2 border rounded-xl"
+                className="w-full px-4 py-2 border rounded-xl dark:bg-gray-700 dark:border-gray-600"
                 required
               />
             </div>
@@ -173,13 +173,13 @@ export default function EdinburghCastlePage() {
             <textarea 
               id="comment" 
               rows={6} 
-              className="w-full px-4 py-2 border rounded-xl"
+              className="w-full px-4 py-2 border rounded-xl dark:bg-gray-700 dark:border-gray-600"
               required
             ></textarea>
           </div>
           <button 
             type="submit" 
-            className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors"
+            className="px-6 py-3 primary-button rounded-xl transition-colors"
           >
             Post Comment
           </button>

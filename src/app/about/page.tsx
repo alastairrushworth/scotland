@@ -65,7 +65,7 @@ export default function AboutPage() {
           To stay updated with our latest articles and Scotland news, consider subscribing to our newsletter. We promise to respect your privacy and not to flood your inbox!
         </p>
         
-        <div className="bg-blue-50 p-6 rounded-xl mt-8">
+        <div className="newsletter-bg p-6 rounded-xl mt-8">
           <h3 className="text-xl font-bold mb-4">Subscribe to Our Substack</h3>
           <iframe
             src={siteConfig.substackUrl}
@@ -87,7 +87,7 @@ export default function AboutPage() {
       <div className="mt-12">
         <Link 
           href="/blog" 
-          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors"
+          className="inline-block primary-button px-6 py-3 rounded-xl font-medium transition-colors"
         >
           Check Out Our Blog
         </Link>
