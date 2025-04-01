@@ -77,7 +77,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8 text-center">Featured Destinations</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredContent.map((item) => (
-              <div key={item.id} className="bg-white rounded-xl shadow-md overflow-hidden">
+              <div key={item.id} className="card rounded-xl shadow-md overflow-hidden">
                 <div className="relative h-48">
                   <div className="absolute inset-0 bg-gray-200"></div>
                   {/* Note: You'll need to add actual images */}
@@ -99,12 +99,12 @@ export default function Home() {
       </section>
       
       {/* Recent Posts Section */}
-      <section className="mb-16 bg-gray-50 py-12">
+      <section className="mb-16 bg-gray-50 dark:bg-slate-900 py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-center">Recent Blog Posts</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {recentPosts.map((post) => (
-              <div key={post.id} className="bg-white rounded-xl shadow-md p-6">
+              <div key={post.id} className="card rounded-xl shadow-md p-6">
                 <span className="text-sm text-gray-500">{post.date}</span>
                 <h3 className="text-xl font-bold my-2">{post.title}</h3>
                 <p className="text-gray-600 mb-4">{post.excerpt}</p>
@@ -120,7 +120,7 @@ export default function Home() {
           <div className="text-center mt-8">
             <Link 
               href="/blog" 
-              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors"
+              className="inline-block primary-button px-6 py-3 rounded-xl font-medium transition-colors"
             >
               View All Posts
             </Link>
